@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "target": "es5"
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+    ]
+}

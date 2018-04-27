@@ -1,0 +1,65 @@
+{
+  "name": "chess-moves-app",
+  "version": "0.1.0",
+  "description": "A application to check possible moves from chess pieces",
+  "main": "src/index.tsx",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "dev": "./node_modules/.bin/webpack-dev-server",
+    "dev-test": "npm test -- --watchAll",
+    "start": "./node_modules/.bin/http-server -a localhost -p 8080",
+    "test": "./node_modules/.bin/jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriellcardoso/chess-moves-app.git"
+  },
+  "keywords": [
+    "chess",
+    "moves",
+    "app",
+    "react"
+  ],
+  "author": "gabriellcardoso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabriellcardoso/chess-moves-app/issues"
+  },
+  "homepage": "https://github.com/gabriellcardoso/chess-moves-app#readme",
+  "dependencies": {
+    "awesome-typescript-loader": "^5.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.10",
+    "@types/jest": "^22.2.3",
+    "@types/react": "^16.3.12",
+    "@types/react-dom": "^16.0.5",
+    "@types/react-test-renderer": "^16.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "http-server": "^0.11.1",
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.2",
+    "source-map-loader": "^0.2.3",
+    "ts-jest": "^22.4.4",
+    "webpack-dev-server": "^3.1.3"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "verbose": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/jest-setup.js"
+  }
+}
