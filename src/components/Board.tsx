@@ -15,6 +15,18 @@ interface BoardState { }
 class Board extends React.Component<BoardProps, BoardState> {
 
     render(): React.ReactElement<any> | false {
+        const boardRows = this.getBoardRows();
+
+        return (
+            <section className="board">
+                <LegendRow />
+                {boardRows}
+                <LegendRow />
+            </section>
+        );
+    }
+
+    private getBoardRows(): React.ReactNode {
         const {
             knight,
             highlightTiles,
@@ -35,13 +47,7 @@ class Board extends React.Component<BoardProps, BoardState> {
             );
         }
 
-        return (
-            <section className="board">
-                <LegendRow />
-                {boardRows}
-                <LegendRow />
-            </section>
-        );
+        return boardRows;
     }
 
 }

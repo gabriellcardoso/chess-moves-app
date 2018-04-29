@@ -22,17 +22,28 @@ class BoardTile extends React.Component<BoardTileProps, BoardTileState> {
             onSelect
         } = this.props;
 
+        const className = this.getClassName();
+
         return (
             <div
-                className="tile"
+                className={className}
                 onClick={() => onSelect(position)}
             >
-                {position}
                 {knight ? <KnightPiece /> : false}
             </div>
         );
     }
 
+
+    private getClassName(): string {
+        const classNames = ['tile'];
+
+        if (this.props.highlight) {
+            classNames.push('highlight');
+        }
+
+        return classNames.join(' ');
+    }
 }
 
 export { BoardTile }

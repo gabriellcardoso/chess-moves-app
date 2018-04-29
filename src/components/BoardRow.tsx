@@ -16,19 +16,29 @@ interface BoardRowState { }
 class BoardRow extends React.Component<BoardRowProps, BoardRowState> {
 
     render(): React.ReactElement<any> | false {
+        const { index } = this.props;
+        const tiles = this.getBoardTiles(index);
+
+        return (
+            <div className="row">
+                <LegendTile>{index}</LegendTile>
+                {tiles}
+                <LegendTile>{index}</LegendTile>
+            </div>
+        );
+    }
+
+    private getBoardTiles(row: number): React.ReactNode {
         const {
-            index,
             knight,
             highlightTiles,
             onSelectTile
         } = this.props;
 
-        const tiles: React.ReactNode[] = [];
+        const tiles: React.ReactElement<any>[] = [];
 
         for (let column = 1; column < 9; column++) {
-            const letter = String.fromCharCode(64 + column);
-            const position = (letter + index) as Annotation;
-
+            const position = this.getPosition(column, row);
             tiles.push(
                 <BoardTile
                     key={position}
@@ -40,15 +50,13 @@ class BoardRow extends React.Component<BoardRowProps, BoardRowState> {
             );
         }
 
-        return (
-            <div className="row">
-                <LegendTile>{index}</LegendTile>
-                {tiles}
-                <LegendTile>{index}</LegendTile>
-            </div>
-        );
+        return tiles;
     }
 
+    private getPosition(column: number, row: number): Annotation {
+        const letter = String.fromCharCode(64 + column);
+        return (letter + row) as Annotation;
+    }
 }
 
 export { BoardRow }

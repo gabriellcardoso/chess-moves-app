@@ -3,7 +3,7 @@ import * as React from 'react';
 import { LegendTile } from './LegendTile';
 
 const LegendRow = () => (
-    <div className="legend row ">
+    <div className="legend-row">
         <LegendTile>A</LegendTile>
         <LegendTile>B</LegendTile>
         <LegendTile>C</LegendTile>

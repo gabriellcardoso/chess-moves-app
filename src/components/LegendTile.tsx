@@ -5,8 +5,10 @@ interface LegendTileProps {
 }
 
 const LegendTile = (props: LegendTileProps) => (
-    <div className="legend tile">
-        {props.children}
+    <div className="legend-tile">
+        <span className="legend">
+            {props.children}
+        </span>
     </div>
 );
 
