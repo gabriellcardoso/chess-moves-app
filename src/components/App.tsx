@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Board } from './Board';
 import { Annotation } from '../models/Annotation';
+import { ApiClient } from '../utils/ApiClient';
 
 interface AppProps { }
 
@@ -16,7 +17,7 @@ class App extends React.Component<AppProps, AppState> {
     componentWillMount(): void {
         this.setState({
             knight: null,
-            highlight: false,
+            highlight: true,
             highlightTiles: [] as Annotation[]
         });
     }
@@ -29,19 +30,23 @@ class App extends React.Component<AppProps, AppState> {
         } = this.state;
 
         return (
-            < section className="app" >
+            <section className="app">
                 <Board
                     knight={knight}
                     highlightTiles={highlight ? highlightTiles : []}
                     onSelectTile={position => this.handleTileSelect(position)}
                 />
-            </section >
+            </section>
         );
     }
 
     private handleTileSelect(position: Annotation) {
-        console.log(position);
         this.setState({ knight: position });
+
+        ApiClient
+            .getKnightMoves(position)
+            .then(movements => this.setState({ highlightTiles: movements }))
+            .catch(console.log);
     }
 
 }
