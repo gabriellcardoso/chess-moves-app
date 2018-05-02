@@ -11,12 +11,40 @@ body {
     position: relative;
 }
 
+header {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+header p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 24px;
+}
+
+.toggle {
+    width: auto !important;
+}
+
 .board {
     display: block;
     margin: 0 auto;
 }
 
 @media (orientation: landscape) {
+    header {
+        width: 100vh;
+        padding: 10vh 10vh 0;
+    }
     .board {
         width: 100vh;
         height: 100vh;
@@ -24,6 +52,10 @@ body {
 }
 
 @media (orientation: portrait) {
+    header {
+        width: 100vw;
+        padding: 10vw 10vw 0;
+    }
     .board {
         width: 100vw;
         height: 100vw;

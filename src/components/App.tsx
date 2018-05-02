@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { Board } from './Board';
+import { Toggle } from './Toggle';
 import { BoardPosition } from '../models/BoardPosition';
 import { ApiClient } from '../utils/ApiClient';
 
@@ -27,6 +28,19 @@ class App extends React.Component<AppProps, AppState> {
 
         return (
             <section className="app">
+                <header>
+                    <h1>Knight Moves</h1>
+                    <p>
+                        Knight moves is an application where you can check the possible moves in 2 turns for a knight piece.
+                        To start, click/tap anywhere in the chess board to add insert a knight piece.
+                        After that, you can move the piece through the chess board by clicking/tapping anywhere.
+                    </p>
+                    <Toggle
+                        label="Show moves"
+                        value={showMoves}
+                        onToggle={value => this.setState({ showMoves: value })}
+                    />
+                </header>
                 <Board
                     knight={knight}
                     moves={showMoves ? moves : []}
