@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Board } from './Board';
-import { BoardPosition } from '../models/Annotation';
+import { BoardPosition } from '../models/BoardPosition';
 import { ApiClient } from '../utils/ApiClient';
 
 interface AppProps { }

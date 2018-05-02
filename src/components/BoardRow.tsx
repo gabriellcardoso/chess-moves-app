@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BoardPosition } from '../models/Annotation';
+import { BoardPosition } from '../models/BoardPosition';
 import { PositionUtils } from '../utils/PositionUtils';
 import { BoardTile } from './BoardTile';
 import { LegendTile } from './LegendTile';

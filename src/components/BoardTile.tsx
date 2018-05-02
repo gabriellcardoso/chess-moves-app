@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { BoardPosition } from '../models/Annotation';
+import { BoardPosition } from '../models/BoardPosition';
 import { KnightPiece } from './KnightPiece';
 
 interface BoardTileProps {

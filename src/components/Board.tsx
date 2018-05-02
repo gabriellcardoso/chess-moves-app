@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { BoardRow } from './BoardRow';
 import { LegendRow } from './LegendRow';
-import { BoardPosition } from '../models/Annotation';
+import { BoardPosition } from '../models/BoardPosition';
 
 interface BoardProps {
     knight: BoardPosition;

@@ -1,4 +1,4 @@
-import { BoardPosition } from "../models/Annotation";
+import { BoardPosition } from "../models/BoardPosition";
 
 class PositionUtils {
 

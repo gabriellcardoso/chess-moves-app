@@ -1,5 +1,5 @@
 import { Config } from '../config';
-import { BoardPosition } from '../models/Annotation';
+import { BoardPosition } from '../models/BoardPosition';
 
 class ApiClient {
 
