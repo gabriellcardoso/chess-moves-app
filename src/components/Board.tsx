@@ -2,12 +2,12 @@ import * as React from 'react';
 
 import { BoardRow } from './BoardRow';
 import { LegendRow } from './LegendRow';
-import { Annotation } from '../models/Annotation';
+import { BoardPosition } from '../models/Annotation';
 
 interface BoardProps {
-    knight: Annotation;
-    highlightTiles: Annotation[];
-    onSelectTile: (position: Annotation) => void;
+    knight: BoardPosition;
+    moves: BoardPosition[];
+    onSelectTile: (position: BoardPosition) => void;
 }
 
 interface BoardState { }
@@ -29,7 +29,7 @@ class Board extends React.Component<BoardProps, BoardState> {
     private getBoardRows(): React.ReactNode {
         const {
             knight,
-            highlightTiles,
+            moves,
             onSelectTile
         } = this.props;
 
@@ -41,7 +41,7 @@ class Board extends React.Component<BoardProps, BoardState> {
                     key={index}
                     index={index}
                     knight={knight}
-                    highlightTiles={highlightTiles}
+                    moves={moves}
                     onSelectTile={onSelectTile}
                 />
             );

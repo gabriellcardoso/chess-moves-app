@@ -1,54 +1,66 @@
 import * as React from 'react';
 
 import { Board } from './Board';
-import { Annotation } from '../models/Annotation';
+import { BoardPosition } from '../models/Annotation';
 import { ApiClient } from '../utils/ApiClient';
 
 interface AppProps { }
 
 interface AppState {
-    knight: Annotation;
-    highlight: boolean;
-    highlightTiles: Annotation[];
+    knight: BoardPosition;
+    moves: BoardPosition[];
+    showMoves: boolean;
 }
 
 class App extends React.Component<AppProps, AppState> {
 
     componentWillMount(): void {
-        this.setState({
-            knight: null,
-            highlight: true,
-            highlightTiles: [] as Annotation[]
-        });
+        this.setInitialState();
     }
 
     render(): React.ReactElement<any> | false {
         const {
             knight,
-            highlight,
-            highlightTiles
+            moves,
+            showMoves
         } = this.state;
 
         return (
             <section className="app">
                 <Board
                     knight={knight}
-                    highlightTiles={highlight ? highlightTiles : []}
-                    onSelectTile={position => this.handleTileSelect(position)}
+                    moves={showMoves ? moves : []}
+                    onSelectTile={position => this.handleSelectTile(position)}
                 />
             </section>
         );
     }
 
-    private handleTileSelect(position: Annotation) {
-        this.setState({ knight: position });
+    private setInitialState(): void {
+        this.setState({
+            knight: null,
+            showMoves: true,
+            moves: [] as BoardPosition[]
+        });
+    }
+
+    private handleSelectTile(position: BoardPosition): void {
+        this.setKnightPosition(position);
 
         ApiClient
             .getKnightMoves(position)
-            .then(movements => this.setState({ highlightTiles: movements }))
+            .then(moves => this.setMoves(moves))
             .catch(console.log);
     }
 
+
+    private setMoves(moves: BoardPosition[]): void {
+        return this.setState({ moves });
+    }
+
+    private setKnightPosition(position: BoardPosition): void {
+        this.setState({ knight: position });
+    }
 }
 
 export { App }

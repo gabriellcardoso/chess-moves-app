@@ -1,9 +1,9 @@
 import { Config } from '../config';
-import { Annotation } from '../models/Annotation';
+import { BoardPosition } from '../models/Annotation';
 
 class ApiClient {
 
-    static getKnightMoves(annottation: Annotation): Promise<Annotation[]> {
+    static getKnightMoves(annottation: BoardPosition): Promise<BoardPosition[]> {
         const url = this.getUrl(`/knight/${annottation}/moves/`);
 
         return fetch(url)

@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import { Annotation } from '../models/Annotation';
+import { BoardPosition } from '../models/Annotation';
 import { KnightPiece } from './KnightPiece';
 
 interface BoardTileProps {
-    position: Annotation;
+    position: BoardPosition;
     knight: boolean;
     highlight: boolean;
-    onSelect: (position: Annotation) => void;
+    onSelect: (position: BoardPosition) => void;
 }
 
 interface BoardTileState { }
