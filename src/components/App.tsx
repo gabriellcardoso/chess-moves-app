@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Board } from './Board';
-import { Toggle } from './Toggle';
 import { BoardPosition } from '../models/BoardPosition';
 import { ApiClient } from '../utils/ApiClient';
+import { Board } from './Board';
+import { Toggle } from './Toggle';
 
 interface AppProps { }
 

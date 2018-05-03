@@ -2,13 +2,14 @@ jest.mock('../../src/utils/ApiClient.ts');
 
 import { mount, ReactWrapper } from 'enzyme';
 import { getMuiTheme } from 'material-ui/styles';
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 import { App, AppProps, AppState } from '../../src/components/App';
 import { Board } from '../../src/components/Board';
-import { ApiClient } from '../../src/utils/ApiClient';
 import { Toggle } from '../../src/components/Toggle';
+import { ApiClient } from '../../src/utils/ApiClient';
+
 
 describe('Given an App component', () => {
 
