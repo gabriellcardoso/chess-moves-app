@@ -1,4 +1,4 @@
-import { BoardPosition } from "../models/BoardPosition";
+import { BoardPosition } from '../models/BoardPosition';
 
 const getPositionError = 'PositionUtils.getPosition: column and row values should be between 1 and 8.';
 
@@ -11,11 +11,11 @@ class PositionUtils {
         if (isInvalidColumn || isInvalidRow) {
             throw new Error(getPositionError);
         }
-        
+
         const letter = String.fromCharCode(64 + column);
         return (letter + row) as BoardPosition;
     }
 
 }
 
-export { PositionUtils }
+export { PositionUtils };

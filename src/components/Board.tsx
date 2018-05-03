@@ -52,4 +52,4 @@ class Board extends React.Component<BoardProps, BoardState> {
 
 }
 
-export { Board }
+export { Board };

@@ -72,4 +72,4 @@ describe('Given a Toggle component', () => {
         });
     });
 
-})
+});

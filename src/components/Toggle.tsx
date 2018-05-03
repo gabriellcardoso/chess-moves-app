@@ -16,4 +16,4 @@ const Toggle = (props: ToggleProps) => (
     />
 );
 
-export { Toggle, ToggleProps }
+export { Toggle, ToggleProps };

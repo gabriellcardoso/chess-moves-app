@@ -6,4 +6,4 @@ const KnightPiece = () => (
     </span>
 );
 
-export { KnightPiece }
+export { KnightPiece };

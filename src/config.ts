@@ -4,4 +4,4 @@ class Config {
 
 }
 
-export { Config }
+export { Config };

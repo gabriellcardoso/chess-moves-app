@@ -58,7 +58,6 @@ class BoardRow extends React.Component<BoardRowProps, BoardRowState> {
             />
         );
     }
-    
 }
 
-export { BoardRow }
+export { BoardRow };

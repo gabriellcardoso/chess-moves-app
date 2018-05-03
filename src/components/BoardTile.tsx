@@ -46,4 +46,4 @@ class BoardTile extends React.Component<BoardTileProps, BoardTileState> {
     }
 }
 
-export { BoardTile }
+export { BoardTile };

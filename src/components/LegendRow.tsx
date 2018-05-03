@@ -15,4 +15,4 @@ const LegendRow = () => (
     </div>
 );
 
-export { LegendRow }
+export { LegendRow };
