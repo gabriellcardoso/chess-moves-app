@@ -12,4 +12,4 @@ const LegendTile = (props: LegendTileProps) => (
     </div>
 );
 
-export { LegendTile };
+export { LegendTile, LegendTileProps };
