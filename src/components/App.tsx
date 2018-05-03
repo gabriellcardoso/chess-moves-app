@@ -77,4 +77,4 @@ class App extends React.Component<AppProps, AppState> {
     }
 }
 
-export { App };
+export { App, AppProps, AppState };
