@@ -1,0 +1,21 @@
+# top-most EditorConfig file
+root = true
+
+# General styles
+[*]
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+# Indentation
+[*.js]
+indent_style = space
+indent_size = 4
+
+[*.md]
+indent_style = tab
+
+[package.json]
+indent_style = space
+indent_size = 2
